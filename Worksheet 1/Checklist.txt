@@ -1,0 +1,18 @@
+INS3064 - Active Learning Worksheet (Session 00 & 01)
+Code Review Checklist
+
+[✔] File has .php extension and correct location (C:\xampp\htdocs\ins3064\session_01\welcome.php)  2/2
+[✔] PHP opening tag (<?php) present                                                                2/2
+[✔] PHP closing tag (?>) present                                                                   2/2
+[✔] Variable assignments for name, studentId, class, email                                         3/3
+[✔] At least 4 echo statements displaying variables                                                3/3
+[✔] date() function for current date display                                                       2/2
+[✔] date() function for current time display                                                       2/2
+[✔] At least one comment line (// or /* */)                                                        2/2
+[✔] All statements properly end with semicolon                                                     3/3
+[✔] Code is readable with proper indentation                                                       2/2
+[✔] No PHP errors when file runs in browser                                                        3/3
+[✔] Output displays professional appearance                                                        3/3
+
+TOTAL SCORE: 30/30
+Notes: Timezone set to Asia/Ho_Chi_Minh to display correct Vietnam time.
