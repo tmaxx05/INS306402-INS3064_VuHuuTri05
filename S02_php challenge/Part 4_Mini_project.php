@@ -45,19 +45,19 @@
             return "BMI: $bmiFormatted ($category)";
         }
         
-        echo calculateBMI(100, 1.52);
+        echo calculateBMI(70, 1.75);
         ?>
     </div>
 
     <!-- 02 Student List -->
     <h3>02. Student List</h3>
-    <div class="output" style="background: white; color: black;">
+    <div class="output" style="background: orange; color: black;">
         <?php
         $students = [
-            ['name' => 'Nguyen Van A', 'grade' => 85],
-            ['name' => 'Tran Thi B', 'grade' => 92],
-            ['name' => 'Le Van C', 'grade' => 78],
-            ['name' => 'Pham Thi D', 'grade' => 65]
+            ['name' => 'Nguyen Van A', 'grade' => 88],
+            ['name' => 'Vu Thi B', 'grade' => 95],
+            ['name' => ' William John', 'grade' => 49],
+            ['name' => 'Tran Thi D', 'grade' => 58]
         ];
         ?>
         <table>
@@ -111,7 +111,7 @@
     <h3>04. Scoreboard</h3>
     <div class="output">
         <?php
-        $scores = [45, 80, 90, 60, 75, 88, 92, 55];
+        $scores = [49, 80, 90, 66, 78, 88, 92, 53];
         
         // Calculations
         $max = max($scores);
