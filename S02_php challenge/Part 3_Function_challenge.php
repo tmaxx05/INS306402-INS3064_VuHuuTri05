@@ -74,3 +74,8 @@
         <p><strong>05 Formatter:</strong> <?= fmt(50) ?></p>
         <p><strong>06 Pure Math:</strong> <?= add(5, 7) ?></p>
     </div>
+</div>
+
+</body>
+</html>
+
