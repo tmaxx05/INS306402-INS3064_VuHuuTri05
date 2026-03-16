@@ -1,1 +1,53 @@
+CREATE DATABASE blog_schema;
+-- USERS table
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL
+);
+
+-- CATEGORIES table
+CREATE TABLE categories (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- TAGS table
+CREATE TABLE tags (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- POSTS table
+CREATE TABLE posts (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT NOT NULL,
+  category_id INT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  content TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
+);
+
+-- POST_TAGS junction table (N:N between posts and tags)
+CREATE TABLE post_tags (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  post_id INT NOT NULL,
+  tag_id INT NOT NULL,
+  FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
+  FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE,
+  UNIQUE KEY (post_id, tag_id)
+);
+
+-- COMMENTS table
+CREATE TABLE comments (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT NOT NULL,
+  post_id INT NOT NULL,
+  content TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE
+);
 
